@@ -1,6 +1,7 @@
 # Divisive_Normalization
 
-This repository contains source code from the paper *Modeling Divisive Normalization in Visual Cortex*.
+This repository contains source code from the paper *Modeling Divisive Normalization in Visual Cortex*.  
+If not intended to use our training pipeline / model, directly use files under `structures` to obtain our implementations of divisive normalization layer.
 
 ## Table of Contents
 [How to run](#how-to-run)   
@@ -63,4 +64,3 @@ Use the Dockerfile in this repo.
 - `experiments`: directly executable python file for experiments / tests
 - `modules`: important modules to perform experiments
 - `structures`: this project's core structure: implementation of divisive normalization 
-- `notebooks`: contains notebooks for prototypes and visualizations 
