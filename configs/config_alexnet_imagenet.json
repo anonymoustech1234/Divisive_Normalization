@@ -1,0 +1,81 @@
+{
+  "exp_name": "alexnet_imagenet",
+  "seed": 42,
+  "device_id": 0,
+  "visualize": false,
+  "runs": 1,
+  "email_result": false,
+  "email_recipents": [],
+  "data": {
+    "path": "/inputdata",
+    "dataset": "imagenet",
+    "bz": 128,
+    "num_workers": 8,
+    "num_classes": 1000,
+    "gpu": false
+  },
+  "training": {
+    "patience": 5,
+    "early_stop": false,
+    "epochs": 90,
+    "criterion": "cross_entropy"
+  },
+  "optimizer": {
+    "name": "sgd",
+    "lr": 0.05,
+    "momentum": 0.9,
+    "dampening": 0,
+    "nesterov": true,
+    "weight_decay": 1e-04,
+    "beta1": 0.9,
+    "beta2": 0.999,
+    "eps": 1e-07,
+    "amsgrad": false
+  },
+  "lr_scheduler": {
+    "name": "plateau",
+    "step_size": 20,
+    "gamma": 0.1,
+    "patience": 5,
+    "factor": 0.1,
+    "t_max": 90
+  },
+  "model": {
+    "type": "alexnet",
+    "mean_std": 0.01,
+    "std": 0.01,
+    "std_ratio":0.01,
+    "batchnorm": true,
+    "activation": "half-square",
+    "weight_init": "kaiming",
+    "nonlinearity": "relu",
+    "l1reg":0,
+    "relu":true,
+    "for_dataset": "imagenet",
+    "num_classes": 1000,
+    "divnorm_specs": {
+      "type": "nonorm",
+      "fix_all": false,
+      "single_gamma": false,
+      "single_sigma": false,
+      "fix_gamma": false,
+      "fix_sigma": false,
+      "normalize_gamma": false,
+      "normalize_sigma": false,
+      "eps": 0,
+      "sigma": 1.0,
+      "gamma": 1.0,
+      "lamb": 10.0,
+      "alpha": 0.1,
+      "beta": 1.0,
+      "k": 10.0,
+      "p": 0.5,
+      "power": 2
+    }
+  },
+  "recorder":{
+    "model_saving_flag": true ,
+    "neuron_activity_flag": false ,
+    "train_log" :false
+  }
+}
